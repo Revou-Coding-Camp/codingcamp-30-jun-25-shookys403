@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/tailwindcss">
+        @layer components {
+          nav a {
+            @apply inline-flex items-center justify-center border-b border-transparent hover:border-black transition-colors duration-300 text-[18px] font-sans;
+          }
+          .Message{
+            @apply bg-yellow-300 w-[150px] h-[50px] rounded-2xl hover:bg-yellow-400 hover:text-white transition-colors duration-300 border-none;
+          }
+        }
+      </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Portfolio</title>
+</head>
+<body class = "bg-white scroll-smooth">
+    <!-- Head  -->
+    <header class = "flex justify-between items-center">
+        <!-- Logo  -->
+        <div class = "Logo border-solid outline-1 w-[50px] h-[50px] m-[10px] ml-[15px] px-[20px] bg-[url('./assets/Revou-alasan.original.png')] flex bg-cover rounded-[50px]"></div>
+        <!-- Navbar  -->
+        <nav class = "flex items-center gap-[60px] px-10 mr-[15px] text-black ">
+            <a href="#">Home</a>
+            <a href="#">My Profile</a>
+            <a href="#">Portfolio</a>
+            <a href="#" class = "Message">Message Us</a>
+        </nav>
+    </header>
+    <!-- Main  -->
+    <main>
+        <!-- Welcome Section -->
+        <section id="Welcome" class ="flex">
+            <aside>
+                <h1 class ="px-[50px] py-[30px] text-7xl">Welcome, User</h1>
+            </aside>
+        </section>
+        <section id="Profile"
+    </main>
+
+    <!-- Footer  -->
+    <footer></footer>
+
+
+    <script src="/js/script.js"></script>
+</body>
+</html>
