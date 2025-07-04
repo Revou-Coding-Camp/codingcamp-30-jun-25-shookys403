@@ -1,49 +1,147 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class ="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style type="text/tailwindcss">
         @layer components {
-          nav a {
-            @apply inline-flex items-center justify-center border-b border-transparent hover:border-black transition-colors duration-300 text-[18px] font-sans;
+          nav ul li a {
+            @apply inline-flex items-center justify-center border-b border-transparent hover:border-[#375291] transition-colors duration-300 text-[18px] font-mono;
           }
           .Message{
-            @apply bg-yellow-300 w-[150px] h-[50px] rounded-2xl hover:bg-yellow-400 hover:text-white transition-colors duration-300 border-none;
+            @apply border-2 px-6 py-2 rounded-xl bg-yellow-400 font-medium text-black hover:text-white hover:bg-yellow-400 hover:border-yellow-400 transition-colors duration-300
           }
         }
       </style>
+          <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"/>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css" />
+
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Portfolio</title>
 </head>
-<body class = "bg-white scroll-smooth">
+
+<body class = "bg-[#0c1324]">
     <!-- Head  -->
-    <header class = "flex justify-between items-center">
-        <!-- Logo  -->
-        <div class = "Logo border-solid outline-1 w-[50px] h-[50px] m-[10px] ml-[15px] px-[20px] bg-[url('./assets/Revou-alasan.original.png')] flex bg-cover rounded-[50px]"></div>
-        <!-- Navbar  -->
-        <nav class = "flex items-center gap-[60px] px-10 mr-[15px] text-black ">
-            <a href="#">Home</a>
-            <a href="#">My Profile</a>
-            <a href="#">Portfolio</a>
-            <a href="#" class = "Message">Message Us</a>
+    <header class ="mb-2 shadow px-4">
+      <div class="flex w-full px-4 py-4 text-white justify-between items-center">
+
+        <!-- Logo -->
+        <div class = "border-solid outline-1 w-[50px] h-[50px] bg-[url('./assets/Revou-alasan.original.png')] bg-cover rounded-full"></div>
+
+        <!-- icon -->
+        <div class="text-2xl cursor-pointer sm:hidden" id="menu-click">
+          <i class="ph ph-list"></i>
+        </div>
+
+        <!-- Navbar -->
+        <nav class = "hidden flex-col sm:flex sm:flex-row sm:justify-end sm:items-center overflow-hidden transition-all duration-300 ease-in-out" id="navbar">
+              <ul class = "flex flex-col sm:flex-row gap-4 sm:gap-x-8 mt-4 sm:mt-0 items-start sm:items-center">
+                <li><a href="#Welcome">Home</a></li>
+                <li><a href="#Myprofile">My Profile</a></li>
+                <li><a href="#Achievement">Achievement</a></li>
+                <li><a href="#Message Us" class ="Message">Contact</a></li>
+              </ul>
         </nav>
+      </div>
     </header>
+
     <!-- Main  -->
-    <main>
+    <main class = "text-white font-mono">
         <!-- Welcome Section -->
-        <section id="Welcome" class ="flex">
-            <aside>
-                <h1 class ="px-[50px] py-[30px] text-7xl">Welcome, User</h1>
-            </aside>
+        <section id="Welcome" class ="bg-[#0f172a] min-h-screen flex flex-col-reverse md:flex-row justify-between items-center px-10 py-20">
+          <!-- Kiri -->
+          <div class ="md:w-1/2 text-center md:text-left">
+                <h1 class ="py-[30px] text-5xl md:text-7xl mb-4" id="Welcome">Welcome, User</h1>
+                <p class = "text-xl ">Hello there! My name is Darrell Theodore. I'm a highschool student who passionate about design, innovation, and coding... </p>
+                <div class="flex gap-6 mt-8 justify-center md:justify-start text-3xl">
+                  <a href="mailto:drr10693@gmail.com"><i class="ph ph-envelope"></i></a>
+                  <a href="https://github.com/shookys403"><i class="ph ph-github-logo"></i></a>
+                  <a href="https://www.instagram.com/drl.ntb/"><i class="ph ph-instagram-logo"></i></a>
+                </div>
+                <a href="#Myprofile" class ="px-6 py-4 mt-8 inline-block rounded-xl bg-yellow-400 font-medium text-black hover:text-white hover:bg-yellow-400 hover:border-yellow-400 transition-colors duration-300">Get to know me!</a>
+            </div>
+
+            <!-- Kanan -->
+            <div class ="md:w-1/2 flex justify-center mb-10 md:mb-0 items-center">
+              <img src ="./assets/boy.jpg" alt ="Gambar laki-laki" class="w-full max-w-[500px] max-h-[600px] object-cover shadow-md rounded-2xl hover:scale-105 transition-transform duration-300 hover:shadow-[0_0_30px_#00FFFF]" />
+            </div>
         </section>
-        <section id="Profile"></section>
-    </main>
+
+        <!-- My Profile  -->
+        <section id ="Myprofile" class ="bg-[#0f172a] min-h-screen px-10 py-8">
+          <div class ="max-w-6xl mx-auto"> 
+            <h1 class ="text-5xl md:text-7xl mb-6">My Profile</h1>
+            <p class="text-xl">Hello Everyone! Here's a quick look at who I am :</p>
+            <div class = "flex flex-col-reverse md:flex-row justify-between gap-6 md:gap-8 items-center">
+              <!-- Kartu -->
+                <div class = "bg-[#1e293b] p-4 w-max-[500px] h-[300px] rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 hover:shadow-[0_0_30px_#0ea5e9] space-y-3">
+                  <p>Full Name : Darrell Theodore A.N</p>
+                  <p>School : SMAK PENABUR Kota Wisata</p>
+                  <p>Most Used Language : HTML, CSS, Javascript, C#, myPHP</p>
+                  <p>Apps : VSCode, Figma</p>
+                  <p>Language Spoken : Indonesia(Native), English(Intermediate)</p>
+                  <p>About me : Interested in collaborating building tech</p>
+                </div>
+                <!-- Gambar  -->
+                <div class = "border-solid outline-1 w-[400px] h-[400px] bg-[url('./assets/boy.jpg')] bg-cover rounded-[500px] shadow-lg">
+                </div>
+            </div>
+            <div class ="mt-10 text-center md:text-left">
+              <a href="#Achievement" class ="px-6 py-4 mt-8 inline-block rounded-xl bg-yellow-400 font-medium text-black hover:text-white hover:bg-yellow-400 hover:border-yellow-400 transition-colors duration-300">My Achievement!</a>
+            </div>
+          </div>  
+        </section>
+
+        <!-- My Achievement  -->
+        <section id ="Achievement" class ="bg-[#0f172a] min-h-screen px-10 py-20">
+          <div class = "max-w-6xl mx-auto text-center">
+            <h1 class ="text-5xl md:text-7xl mb-12">Achievement</h1>
+            <div class = "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
+            <!-- Penghargaan -->
+            <div class ="flex flex-col items-center">
+              <img src='https://picsum.photos/200' alt="Penghargaan 1" class ="w-[150px] h-[150px] rounded-full object-cover mb-4">
+              <h3>Juara 1 : </h3>
+            </div>
+            <div class = "text-center flex flex-col items-center gap-y-3">
+              <img src='https://picsum.photos/200' alt="Penghargaan 1" class ="w-[150px] h-[150px] rounded-full object-cover mb-4">
+              <h3>Juara 1 : </h3>
+            </div>
+            <div class = "text-center flex flex-col items-center gap-y-3">
+              <img src='https://picsum.photos/200' alt="Penghargaan 1" class ="w-[150px] h-[150px] rounded-full object-cover mb-4">
+              <h3>Juara 1 : </h3>
+            </div>
+            <div class = "text-center flex flex-col items-center gap-y-3">
+                <img src='https://picsum.photos/200' alt="Penghargaan 1" class ="w-[150px] h-[150px] rounded-full object-cover mb-4">
+                <h3>Juara 1 : </h3>
+            </div>
+          </div>
+          </div>
+        </section>
+
+    <!-- Message -->
+    <section id="Message" class="bg-[#0f172a] min-h-screen px-10 py-20">
+      <div class = "max-w-6xl mx-auto text-center">
+        <h2 class = "text-5xl md:text-7xl mb-10">Contact Me</h2>
+        <div class = "flex flex-col-reverse md:flex-row justify-center gap-20">
+          <form class="flex flex-col space-y-4" id="form">
+            <input type="text" placeholder="Your Name" class="p-4 w-full md:w-[400px] rounded bg-[#1e293b] text-white placeholder-gray-400" id="Name" />
+            <input type="email" placeholder="Your Email" class="p-4 rounded bg-[#1e293b] text-white placeholder-gray-400" id="Email" />
+            <textarea placeholder="Your Message" class="p-4 rounded bg-[#1e293b] text-white placeholder-gray-400 h-40" id="Pesan"></textarea>
+            <button type="submit" class="self-start px-6 py-3 rounded-xl bg-yellow-400 font-medium text-black hover:text-white hover:bg-yellow-400 hover:border-yellow-400 transition-colors duration-300" id="Submit">Send Message</button>
+          </form>
+          <textarea placeholder="Result" class="p-4 w-full flex-1 max-w-[600px] min-h-[200px] rounded bg-[#1e293b] text-white placeholder-gray-400" id="result" disabled> </textarea>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="text-center py-6 text-sm text-gray-400 font-mono">
+    &copy; 2025 Darrell Theodore. Thank You RevoU-Camp.
+  </footer>
 
     <!-- Footer  -->
     <footer></footer>
-
 
     <script src="/js/script.js"></script>
 </body>
