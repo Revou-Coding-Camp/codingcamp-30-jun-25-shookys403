@@ -7,14 +7,38 @@
     <style type="text/tailwindcss">
         @layer components {
           nav ul li a {
-            @apply inline-flex items-center justify-center border-b border-transparent hover:border-[#375291] transition-colors duration-300 text-[18px] font-mono;
+            @apply inline-flex items-center justify-center border-b border-transparent transition-colors duration-300 text-[18px] font-mono;
+          }
+
+          nav ul li a:hover {
+          border-bottom: 2px solid #7486b3;
+          text-shadow: 0 0 5px #7486b3, 0 0 10px #7486b3;
           }
           .Message{
             @apply border-2 px-6 py-2 rounded-xl bg-yellow-400 font-medium text-black hover:text-white hover:bg-yellow-400 hover:border-yellow-400 transition-colors duration-300
           }
         }
       </style>
-          <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"/>
+
+      <style>
+          .neon-white {
+          color: #fff;
+          text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #fff, 0 0 80px #fff;
+        }
+      </style>
+
+      <style>          
+      @keyframes pulse-glow {0%, 100% {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff;
+        }
+        50% {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #fff;
+        }
+        }
+        .pulse-neon {
+        animation: pulse-glow 2s ease-in-out infinite;
+        }</style>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"/>
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css" />
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -27,7 +51,7 @@
       <div class="flex w-full px-4 py-4 text-white justify-between items-center">
 
         <!-- Logo -->
-        <div class = "border-solid outline-1 w-[50px] h-[50px] bg-[url('./assets/Revou-alasan.original.png')] bg-cover rounded-full"></div>
+        <div class = "border-solid outline-1 w-[50px] h-[50px] bg-[url('./assets/kid.png')] bg-cover rounded-full"></div>
 
         <!-- icon -->
         <div class="text-2xl cursor-pointer sm:hidden" id="menu-click">
@@ -50,10 +74,12 @@
     <main class = "text-white font-mono">
         <!-- Welcome Section -->
         <section id="Welcome" class ="bg-[#0f172a] min-h-screen flex flex-col-reverse md:flex-row justify-between items-center px-10 py-20">
+          
           <!-- Kiri -->
           <div class ="md:w-1/2 text-center md:text-left">
-                <h1 class ="py-[30px] text-5xl md:text-7xl mb-4" id="Welcome">Welcome, User</h1>
+                <h1 class ="py-[30px] text-5xl md:text-7xl mb-4 neon-white" id="Welcome">Welcome, User</h1>
                 <p class = "text-xl ">Hello there! My name is Darrell Theodore. I'm a highschool student who passionate about design, innovation, and coding... </p>
+                <p class ="text-gray-400 py-2"> Ini baru latihan... hehe</p>
                 <div class="flex gap-6 mt-8 justify-center md:justify-start text-3xl">
                   <a href="mailto:drr10693@gmail.com"><i class="ph ph-envelope"></i></a>
                   <a href="https://github.com/shookys403"><i class="ph ph-github-logo"></i></a>
@@ -68,54 +94,51 @@
             </div>
         </section>
 
-        <!-- My Profile  -->
-        <section id ="Myprofile" class ="bg-[#0f172a] min-h-screen px-10 py-8">
-          <div class ="max-w-6xl mx-auto"> 
-            <h1 class ="text-5xl md:text-7xl mb-6">My Profile</h1>
-            <p class="text-xl">Hello Everyone! Here's a quick look at who I am :</p>
-            <div class = "flex flex-col-reverse md:flex-row justify-between gap-6 md:gap-8 items-center">
+        <!-- My pROFILE -->
+        <section id="Myprofile" class="bg-[#0f172a] min-h-screen">
+          <div class="max-w-6xl mx-auto px-5 md:px-0"> 
+            <h1 class="text-5xl md:text-7xl mb-4">My Profile</h1>
+            <p class="text-xl mb-4">Hello Everyone! Here's a quick look at who I am :</p>
+            <div class="flex flex-col-reverse md:flex-row justify-between gap-4 md:gap-6 items-center md:items-start">
               <!-- Kartu -->
-                <div class = "bg-[#1e293b] p-4 w-max-[500px] h-[300px] rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 hover:shadow-[0_0_30px_#0ea5e9] space-y-3">
-                  <p>Full Name : Darrell Theodore A.N</p>
-                  <p>School : SMAK PENABUR Kota Wisata</p>
-                  <p>Most Used Language : HTML, CSS, Javascript, C#, myPHP</p>
-                  <p>Apps : VSCode, Figma</p>
-                  <p>Language Spoken : Indonesia(Native), English(Intermediate)</p>
-                  <p>About me : Interested in collaborating building tech</p>
-                </div>
-                <!-- Gambar  -->
-                <div class = "border-solid outline-1 w-[400px] h-[400px] bg-[url('./assets/boy.jpg')] bg-cover rounded-[500px] shadow-lg">
-                </div>
-            </div>
-            <div class ="mt-10 text-center md:text-left">
-              <a href="#Achievement" class ="px-6 py-4 mt-8 inline-block rounded-xl bg-yellow-400 font-medium text-black hover:text-white hover:bg-yellow-400 hover:border-yellow-400 transition-colors duration-300">My Achievement!</a>
+              <div class="bg-[#1e293b] p-4 w-full md:w-[500px] rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 hover:shadow-[0_0_30px_#0ea5e9] space-y-3">
+                <p>Full Name : Darrell Theodore A.N</p>
+                <p>School : SMAK PENABUR Kota Wisata</p>
+                <p>Most Used Language : HTML, CSS, Javascript, C#, myPHP</p>
+                <p>Apps : VSCode, Figma</p>
+                <p>Language Spoken : Indonesia(Native), English(Intermediate)</p>
+                <p>About me : Interested in collaborating building tech</p>
+              </div>
+        
+              <!-- Gambar -->
+              <div class="w-[300px] h-[300px] md:w-[400px] md:h-[400px] bg-[url('./assets/boy.jpg')] bg-cover rounded-full shadow-lg -mt-4">
+              </div>
             </div>
           </div>  
         </section>
 
         <!-- My Achievement  -->
-        <section id ="Achievement" class ="bg-[#0f172a] min-h-screen px-10 py-20">
-          <div class = "max-w-6xl mx-auto text-center">
+        <section id ="Achievement" class ="bg-[#0f172a] py-20">
+          <div class = "max-w-7xl mx-auto text-center">
             <h1 class ="text-5xl md:text-7xl mb-12">Achievement</h1>
-            <div class = "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
+            <div class = "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 justify-center">
             <!-- Penghargaan -->
             <div class ="flex flex-col items-center">
               <img src='https://picsum.photos/200' alt="Penghargaan 1" class ="w-[150px] h-[150px] rounded-full object-cover mb-4">
-              <h3>Juara 1 : </h3>
+              <h3 class ="">1st Winner - PKF National Event</h3>
+              <p class = "text-gray-400">Game Development</p>
             </div>
-            <div class = "text-center flex flex-col items-center gap-y-3">
-              <img src='https://picsum.photos/200' alt="Penghargaan 1" class ="w-[150px] h-[150px] rounded-full object-cover mb-4">
-              <h3>Juara 1 : </h3>
+            <div class = "flex flex-col items-center">
+              <img src='https://picsum.photos/200' alt="Penghargaan 2" class ="w-[150px] h-[150px] rounded-full object-cover mb-4">
+              <h3>Finalist - TIOS</h3>
+              <p class ="text-gray-400">National Scientific Paper Competition</p>
             </div>
-            <div class = "text-center flex flex-col items-center gap-y-3">
-              <img src='https://picsum.photos/200' alt="Penghargaan 1" class ="w-[150px] h-[150px] rounded-full object-cover mb-4">
-              <h3>Juara 1 : </h3>
+            <div class = "flex flex-col items-center">
+              <img src='https://picsum.photos/200' alt="Penghargaan 3" class ="w-[150px] h-[150px] rounded-full object-cover mb-4">
+              <h3>Semifinalist-LOKASI</h3>
+              <p class ="text-gray-400"> National Scientific Paper Competition</p>
             </div>
-            <div class = "text-center flex flex-col items-center gap-y-3">
-                <img src='https://picsum.photos/200' alt="Penghargaan 1" class ="w-[150px] h-[150px] rounded-full object-cover mb-4">
-                <h3>Juara 1 : </h3>
             </div>
-          </div>
           </div>
         </section>
 
@@ -123,7 +146,7 @@
     <section id="Message" class="bg-[#0f172a] min-h-screen px-10 py-20">
       <div class = "max-w-6xl mx-auto text-center">
         <h2 class = "text-5xl md:text-7xl mb-10">Contact Me</h2>
-        <div class = "flex flex-col-reverse md:flex-row justify-center gap-20">
+        <div class = "flex flex-col md:flex-row justify-center gap-20">
           <form class="flex flex-col space-y-4" id="form">
             <input type="text" placeholder="Your Name" class="p-4 w-full md:w-[400px] rounded bg-[#1e293b] text-white placeholder-gray-400" id="Name" />
             <input type="email" placeholder="Your Email" class="p-4 rounded bg-[#1e293b] text-white placeholder-gray-400" id="Email" />
