@@ -1,3 +1,4 @@
+// Form 
 const form = document.getElementById("form")
 const result = document.getElementById("result")
 document.getElementById("Submit").addEventListener("click", function (e) {
@@ -29,7 +30,7 @@ document.getElementById("Submit").addEventListener("click", function (e) {
     result.value = `Hello, ${name}!\n\nYour email: ${email}\n\nMessage: ${message}`;
   });
   
-
+// Task 
 const menuClick = document.getElementById('menu-click');
 const navbar = document.getElementById('navbar');
 
